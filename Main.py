@@ -14,7 +14,6 @@ for workoutUrl in workoutsList:
     tmpWorkout = Workout_Info.retrieveWorkoutInfo(workoutUrl)
     exists = Workout_Storage.checkIfExists(tmpWorkout.workoutUrl)
     if exists[0] > 0:
-        # Workout_Storage.updateWorkout(tmpWorkout)
         existsInARow += 1
     else:
         Workout_Storage.insertWorkout(tmpWorkout)

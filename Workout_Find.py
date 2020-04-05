@@ -1,9 +1,9 @@
-#System
 from bs4 import BeautifulSoup as BS
 from urllib import request as URLRequest
 
 urlBase = "https://darebee.com"
 urlFilter = "https://darebee.com/workouts.html?start="
+
 
 def findAllWorkouts():
     workoutList = []
@@ -11,7 +11,8 @@ def findAllWorkouts():
     loopMax = 9999
     while loopCount <= loopMax:
         tmpFilter = urlFilter + str(loopCount)
-        workoutDivs = BS(URLRequest.urlopen(tmpFilter), "html.parser").select(".pull-none")
+        workoutDivs = BS(URLRequest.urlopen(tmpFilter),
+                         "html.parser").select(".pull-none")
         if len(workoutDivs) < 1:
             loopMax = 0
         else:
