@@ -53,7 +53,7 @@ def retrieveWorkoutInfo(workoutUrl):
     except:
         bsExtraCredit = ""
 
-    workoutUrl = workoutUrl
+
     workoutName = bsExercises[bsExercises.find("ts/")+3:bsExercises.find(".")]
     workoutExercises = "https://darebee.com" + bsExercises
     workoutMuscles = "https://darebee.com" + bsMuscles
